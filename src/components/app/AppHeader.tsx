@@ -64,7 +64,7 @@ const AppHeader = async () => {
                 ติดต่อเรา
               </Link>
             </div>
-            {!session ? (
+            {!session && (
               <div className="flex gap-2">
                 <Link
                   className="inline-flex justify-center gap-0.5 overflow-hidden rounded-full bg-zinc-900 px-3 py-1 text-sm/6 font-medium text-white transition hover:bg-zinc-700"
@@ -79,9 +79,8 @@ const AppHeader = async () => {
                   สมัครสมาชิก
                 </Link>
               </div>
-            ) : (
-              <AppLogoutButton />
             )}
+            {session && <AppLogoutButton />}
           </div>
         </div>
       </div>
